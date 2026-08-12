@@ -739,7 +739,7 @@
             throw new Error(data.message || '未知错误')
           }
           await this.fetchLocalBooks()
-          location.href = `/book-download?filename=${encodeURIComponent(this.latestFileName)}`
+          location.href = `${CONTEXT_PATH}/book-download?filename=${encodeURIComponent(this.latestFileName)}`
         } catch (error) {
           alert(`下载书籍到服务器失败: ${error.message}`)
         } finally {
