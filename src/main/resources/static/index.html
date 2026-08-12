@@ -515,7 +515,9 @@
     <div class="text-center py-8 text-sm text-gray-400" x-show="sources.length === 0">暂无书源</div>
   </div>
 </div>
-
+<script>
+  const CONTEXT_PATH="/so-novel";
+</script>
 <script src="js/api.js"></script>
 <script>
   function App() {
@@ -808,7 +810,7 @@
       },
 
       handleDownloadFileToLocal(name) {
-        location.href = `/book-download?filename=${encodeURIComponent(name)}`
+        location.href = `${CONTEXT_PATH}/book-download?filename=${encodeURIComponent(name)}`
       },
 
       handleSettingChange() {
@@ -823,7 +825,7 @@
       },
 
       initSSE() {
-        const evtSource = new EventSource('/download-progress')
+        const evtSource = new EventSource(`${CONTEXT_PATH}/download-progress`)
         evtSource.onopen = (event) => {
           console.log("✅ SSE 已连接")
         }

@@ -32,7 +32,7 @@ public class WebServer {
     }
 
     private ServletContextHandler createServletContext() {
-        ServletContextHandler context = new ServletContextHandler("/");
+        ServletContextHandler context = new ServletContextHandler("/so-novel");
         context.setBaseResource(ResourceFactory.of(context)
                 .newResource(WebServer.class.getClassLoader().getResource("static")));
         return context;
